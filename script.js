@@ -1,9 +1,12 @@
 const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+const loginContainer = document.getElementById('login-container');
 const registerContainer = document.getElementById('register-container');
 const toggleRegisterButton = document.getElementById('toggle-register');
 
 toggleRegisterButton.addEventListener('click', () => {
     registerContainer.classList.toggle('hidden');
+    loginContainer.classList.add('hidden');
 });
 
 loginForm.addEventListener('submit', (e) => {
