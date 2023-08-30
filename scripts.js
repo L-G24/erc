@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
     closeLogin.addEventListener("click", () => loginForm.classList.add("hidden"));
     closeRegister.addEventListener("click", () => registerForm.classList.add("hidden"));
 
-    document.getElementById("login").addEventListener("submit", function(e) {
+      document.getElementById("login").addEventListener("submit", function(e) {
         e.preventDefault();
         const username = document.getElementById("loginUsername").value;
         const password = document.getElementById("loginPassword").value;
 
-        if (mockDB[username] && mockDB[username] === password) {
+        if (mockDB[username] && mockDB[username].password === password) {
             loginForm.classList.add("hidden");
             employeeArea.classList.remove("hidden");
         } else {
@@ -33,11 +33,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("register").addEventListener("submit", function(e) {
         e.preventDefault();
+        const firstName = document.getElementById("registerFirstName").value;
+        const lastName = document.getElementById("registerLastName").value;
         const username = document.getElementById("registerUsername").value;
+        const email = document.getElementById("registerEmail").value;
         const password = document.getElementById("registerPassword").value;
 
-        mockDB[username] = password;
+        mockDB[username] = {
+            firstName,
+            lastName,
+            email,
+            password
+        };
+
         alert("Successfully registered");
         registerForm.classList.add("hidden");
     });
-});
