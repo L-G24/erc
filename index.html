@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <title>Login and Registration</title>
+    <title>Welcome to EAGLE REFUGE CAPITAL Site</title>
 </head>
 <body>
     <div class="container">
-        <div class="form-container">
+        <div class="form-container hidden" id="login-container">
             <h2>Login</h2>
             <form id="login-form">
                 <input type="text" id="login-username" placeholder="Username" required>
@@ -17,7 +17,7 @@
                 <button type="submit">Login</button>
             </form>
         </div>
-        <div class="form-container hidden" id="register-container">
+        <div class="form-container" id="register-container">
             <h2>Register</h2>
             <form id="register-form">
                 <input type="text" id="register-username" placeholder="Username" required>
@@ -25,7 +25,8 @@
                 <button type="submit">Register</button>
             </form>
         </div>
-        <button id="toggle-register">Register</button>
     </div>
+    <h1 class="welcome-message">Welcome To EAGLE REFUGE CAPITAL Site</h1>
+    <button id="toggle-register">Register</button>
 </body>
 </html>
